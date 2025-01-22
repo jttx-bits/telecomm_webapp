@@ -14,23 +14,49 @@
         header {
             background-color: #333;
             color: white;
-            text-align: center;
             padding: 1em 0;
+            text-align: center;
+        }
+        nav {
+            background-color: #444;
+            color: white;
+            padding: 1em;
+            display: flex;
+            justify-content: space-around;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        nav a:hover {
+            text-decoration: underline;
         }
         main {
-            margin: 20px auto;
             padding: 20px;
-            width: 80%;
-            max-width: 600px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        section {
+            margin-bottom: 20px;
+            padding: 20px;
             background: white;
             border-radius: 8px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
-        h1 {
-            color: #333;
+        section h2 {
+            margin-top: 0;
         }
-        p {
-            color: #555;
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid #ccc;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
         }
         button {
             background-color: #333;
@@ -47,36 +73,86 @@
 </head>
 <body>
     <header>
-        <h1>Welcome to the Telecom Web App</h1>
+        <h1>User Dashboard</h1>
     </header>
+    <nav>
+        <a href="#callHistory">Call History</a>
+        <a href="#callBills">Call Bills</a>
+        <a href="#otherFeatures">Other Features</a>
+        <a href="index.html">Logout</a>
+    </nav>
     <main>
-        <!-- User Info Section -->
-        <h1>Welcome, <span id="userName">User</span>!</h1>
-        <p>You are successfully logged in.</p>
+        <!-- Call History Section -->
+        <section id="callHistory">
+            <h2>Call History</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Time</th>
+                        <th>Number Dialed</th>
+                        <th>Duration</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>2025-01-21</td>
+                        <td>10:30 AM</td>
+                        <td>+1234567890</td>
+                        <td>5 minutes</td>
+                    </tr>
+                    <tr>
+                        <td>2025-01-20</td>
+                        <td>03:45 PM</td>
+                        <td>+0987654321</td>
+                        <td>15 minutes</td>
+                    </tr>
+                    <!-- More rows can be dynamically added here -->
+                </tbody>
+            </table>
+        </section>
 
-        <!-- Display email or other details -->
-        <p>Your email: <span id="userEmail">user@example.com</span></p>
+        <!-- Call Bills Section -->
+        <section id="callBills">
+            <h2>Call Bills</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Month</th>
+                        <th>Bill Amount</th>
+                        <th>Status</th>
+                        <th>Payment Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>January 2025</td>
+                        <td>$50</td>
+                        <td>Paid</td>
+                        <td>2025-01-10</td>
+                    </tr>
+                    <tr>
+                        <td>December 2024</td>
+                        <td>$45</td>
+                        <td>Pending</td>
+                        <td>-</td>
+                    </tr>
+                    <!-- More rows can be dynamically added here -->
+                </tbody>
+            </table>
+        </section>
 
-        <!-- Logout Button -->
-        <button onclick="logout()">Logout</button>
+        <!-- Other Features Section -->
+        <section id="otherFeatures">
+            <h2>Other Features</h2>
+            <p>Explore additional functionalities, such as:</p>
+            <ul>
+                <li>Change your plan</li>
+                <li>Update your profile</li>
+                <li>Contact customer support</li>
+            </ul>
+            <button onclick="alert('This feature is coming soon!')">Upgrade Plan</button>
+        </section>
     </main>
-
-    <script>
-        // Example: Set user data dynamically
-        const userData = {
-            name: "John Doe",  // Replace with dynamic data
-            email: "john.doe@example.com"  // Replace with dynamic data
-        };
-
-        // Display user data
-        document.getElementById("userName").textContent = userData.name;
-        document.getElementById("userEmail").textContent = userData.email;
-
-        // Logout function
-        function logout() {
-            alert("You have been logged out!");
-            window.location.href = "login.html"; // Redirect to login page
-        }
-    </script>
 </body>
 </html>
