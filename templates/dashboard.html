@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1em 0;
+        }
+        main {
+            margin: 20px auto;
+            padding: 20px;
+            width: 80%;
+            max-width: 600px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #333;
+        }
+        p {
+            color: #555;
+        }
+        button {
+            background-color: #333;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to the Telecom Web App</h1>
+    </header>
+    <main>
+        <!-- User Info Section -->
+        <h1>Welcome, <span id="userName">User</span>!</h1>
+        <p>You are successfully logged in.</p>
+
+        <!-- Display email or other details -->
+        <p>Your email: <span id="userEmail">user@example.com</span></p>
+
+        <!-- Logout Button -->
+        <button onclick="logout()">Logout</button>
+    </main>
+
+    <script>
+        // Example: Set user data dynamically
+        const userData = {
+            name: "John Doe",  // Replace with dynamic data
+            email: "john.doe@example.com"  // Replace with dynamic data
+        };
+
+        // Display user data
+        document.getElementById("userName").textContent = userData.name;
+        document.getElementById("userEmail").textContent = userData.email;
+
+        // Logout function
+        function logout() {
+            alert("You have been logged out!");
+            window.location.href = "login.html"; // Redirect to login page
+        }
+    </script>
+</body>
+</html>
